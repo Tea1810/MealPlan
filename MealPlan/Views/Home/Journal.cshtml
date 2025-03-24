@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Journal";
+}
+      <div class="container">
+        <section class="objective-section">
+                    <div class="objective-item">
+                        <ul>
+                            <li><span class="objective-text">Objective</span></li>
+                            <li>
+                                <i class="fas fa-bullseye"></i>
+                                <span class="objective-value">1787 kcal</span>
+                            </li>
+                            <li> </li>
+                            <li><span class="objective-text">Consumed</span></li>
+                            <li>
+                                <i class="fas fa-utensils"></i>
+                                <span class="objective-value">0 kcal</span>
+                            </li>
+                        </ul>       
+                       </div>
+
+                    <div class="Weelcontainer">
+                        <div class="circle" data-degree="84" data-color="#AAA">
+                            <h2 class="number">54<span>%</span></h2>
+                        </div>
+                    </div>
+        </section>
+      </div>
+
+        <section class="macros-section">
+            
+                <span class="macro-label">Protein</span>
+                <div class="macro-bar">
+                    <div class="macro-fill" style="width: 10%;"></div>
+                </div>
+                <span class="macro-remaining">145g remaining</span>
+            
+            <div class="macro-item">
+                <span class="macro-label">Carbohidrate</span>
+                <div class="macro-bar">
+                    <div class="macro-fill" style="width: 0%;"></div>
+                </div>
+                <span class="macro-remaining">151g remaining</span>
+            </div>
+            <div class="macro-item">
+                <span class="macro-label">Fat</span>
+                <div class="macro-bar">
+                    <div class="macro-fill" style="width: 0%;"></div>
+                </div>
+                <span class="macro-remaining">67g remaining</span>
+            </div>
+        </section>
+
+        <section class="meal-section">
+            <h2>Breakfast</h2>
+            <p>No meal added</p>
+            <dev style="justify-content: space-between">
+              <a asp-controller="Home" asp-action="AddMeal" class="btn btn-dark"><i class="fas fa-plus"></i></a>
+              <a asp-controller="Home" asp-action="CreateEditRecipe" class="btn btn-dark"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+            </dev>
+        </section>
+        
+        <section class="meal-section">
+            <h2>Lunch</h2>
+            <p>No meal added</p>
+            <dev style="justify-content: space-between">
+               <a asp-controller="Home" asp-action="AddMeal" class="btn btn-dark"><i class="fas fa-plus"></i></a>
+              <a asp-controller="Home" asp-action="CreateEditRecipe" class="btn btn-dark"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+            </dev>
+        </section>
+        
+        <section class="meal-section">
+            <h2>Diner</h2>
+            <p>No meal added</p>
+              <a asp-controller="Home" asp-action="AddMeal" class="btn btn-dark"><i class="fas fa-plus"></i></a>
+              <a asp-controller="Home" asp-action="CreateEditRecipe" class="btn btn-dark"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+            
+        </section>
+    
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function(event)
+    {
+        let circle =  document.querySelectorAll('.circle');
+
+    circle.forEach(function(progress){
+        let degree = 0;
+        var targetDegree = parseInt(progress.getAttribute('data-degree'));
+        let color = progress.getAttribute('data-color');
+        let number = progress.querySelector('.number');
+        
+        var interval = setInterval(function(){
+            degree += 1;
+            if(degree > targetDegree){
+                clearInterval(interval);
+                return;
+            }
+
+            const gradientString = `conic-gradient(${color} ${degree}%, #222 0%)`;
+            progress.style.background = gradientString;
+            number.innerHTML = degree + '<span>%</span>';
+            number.style.color = color;
+            },50)
+    })
+    });
+</script>

@@ -1,0 +1,83 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+.custom-list {
+    list-style-type: none;/* Remove default bullets */
+    padding-left: 0; /* Remove default padding */
+}
+
+    .custom-list li {
+        position: relative;
+        margin-bottom: 10px; /* Add space between list items */
+        padding-left: 30px; /* Add space for the custom bullet */
+    }
+
+        .custom-list li::before {
+            content: '•'; 
+            color: #c9e265; /* Change bullet color */
+            font-size: 24px; /* Increase bullet size */
+            position: absolute;
+            left: 0; /* Adjust bullet position */
+            top: 50%;
+            transform: translateY(-50%); /* Center bullet vertically */
+        }
+
+.dropdown-menu {
+    background-color: #343a40; /* Dark background */
+    border: 1px solid #495057; /* Dark border */
+}
+
+.dropdown-item {
+    color: #ffffff; /* White text */
+    padding: 10px 20px; /* Add padding */
+}
+
+    .dropdown-item:hover {
+        background-color: #495057; /* Darker background on hover */
+        color: #ffffff; /* White text on hover */
+    }
+
+.greenButton {
+    background-color: #c9e265;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    width: 92%;
+    text-align: center; /* Place item in the center */
+}
+
+    .greenButton:hover {
+        background-color: #c9e268;
+        color: white;
+    }

@@ -1,0 +1,417 @@
+/* _content/MealPlan/Views/Home/Index.cshtml.rz.scp.css */
+
+
+.texts[b-si9fkfjae4] {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 10rem 2rem;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+    .texts h1[b-si9fkfjae4] {
+        font-size: 4rem;
+        color: black;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .texts p[b-si9fkfjae4] {
+        font-size: 1.5rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+.calculator-preview[b-si9fkfjae4] {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+    .calculator-preview h2[b-si9fkfjae4] {
+        margin-bottom: 1.5rem;
+    }
+
+.calculator-image[b-si9fkfjae4] {
+    max-width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.features[b-si9fkfjae4] {
+    padding: 3rem 0;
+    background-color: #fff;
+}
+
+.feature-card[b-si9fkfjae4] {
+    padding: 2rem;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+    .feature-card:hover[b-si9fkfjae4] {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+
+/* _content/MealPlan/Views/Home/Journal.cshtml.rz.scp.css */
+
+.objective-section[b-yiasbt0fo2] {
+    background-color: #faffe4;
+    border-radius: 10px;
+    padding: 50px;
+    margin-bottom: 30px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.objective-details[b-yiasbt0fo2] {
+    display: flex;
+    width: 100%; 
+}
+
+.objective-item[b-yiasbt0fo2] {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+    .objective-item li[b-yiasbt0fo2] { 
+        list-style-type: none; 
+    }
+
+
+.objective-text[b-yiasbt0fo2] {
+    font-size: 1.3em;
+    margin-right: auto; 
+}
+
+.objective-value[b-yiasbt0fo2] {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.macros-section[b-yiasbt0fo2] {
+    background-color: #faffe4;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.macro-item[b-yiasbt0fo2] {
+    margin-bottom: 10px;
+}
+
+.macro-label[b-yiasbt0fo2] {
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.macro-bar[b-yiasbt0fo2] {
+    background-color: #c9e265;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.macro-fill[b-yiasbt0fo2] {
+    background-color: #444;
+    height: 100%;
+}
+
+.macro-remaining[b-yiasbt0fo2] {
+    display: block;
+    font-size: 0.8em;
+    margin-top: 5px;
+    text-align: right;
+}
+
+.details-button[b-yiasbt0fo2] {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.meal-section[b-yiasbt0fo2] {
+    background-color: #faffe4;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+    .meal-section h2[b-yiasbt0fo2] {
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+
+    .meal-section p[b-yiasbt0fo2] {
+        font-size: 0.9em;
+        margin-bottom: 10px;
+    }
+
+.add-meal-button[b-yiasbt0fo2] {
+    background-color: #c9e265;
+    border-radius: 50%;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    margin: 5px;
+    color: white; 
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center; 
+    text-decoration: none; 
+    cursor: pointer; 
+}
+
+a i[b-yiasbt0fo2] {
+    color: white; 
+}
+
+.Weelcontainer[b-yiasbt0fo2] {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.circle[b-yiasbt0fo2] {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: #faffe4;
+}
+
+    .circle[b-yiasbt0fo2]::before {
+        content: '';
+        position: absolute;
+        inset: 5px;
+        border-radius: 50%;
+        background: #faffe4;
+        opacity: 0.8;
+    }
+
+    .circle[b-yiasbt0fo2]::after {
+        content: '';
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        background: #faffe4;
+        border: 15px solid #c9e265;
+        border-radius: 50%;
+        box-shadow: inset 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.75), 0 -2px 2px rgba(255, 255, 255, 0.5), inset 0 4px 2px rgba(0,0,0,0.25), inset 0 -2px 2px rgba(255,255,255,0.5);
+    }
+
+    .circle .number[b-yiasbt0fo2] {
+        position: center;
+        z-index: 10;
+        line-height: 0.2em;
+        font-size: 2em;
+    }
+
+        .circle .number span[b-yiasbt0fo2] {
+            font-weight: 500;
+            font-size: 0.5em;
+        }
+/* _content/MealPlan/Views/Home/SeeRecipe.cshtml.rz.scp.css */
+.btn-outline-secondary[b-9yl91h9u3f] {
+    background-color: transparent;
+    border: 2px solid #c9e265;
+    color: #c9e265;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .btn-outline-secondary:hover[b-9yl91h9u3f] {
+        border: #c9e265;
+        background-color: #c9e265;
+        color: white;
+    }
+
+    .btn-outline-secondary:enabled[b-9yl91h9u3f] {
+        border: #c9e265;
+        background-color: #c9e265;
+        color: white;
+    }
+
+.container[b-9yl91h9u3f] {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.meta[b-9yl91h9u3f] {
+    font-size: 1em;
+    background-color: #c9e265;
+    margin-top: 50px;
+    margin-bottom: 90px;
+    margin-right: 10px;
+    padding: 6px 8px;
+    border-radius: 5px;
+}
+
+.intro p[b-9yl91h9u3f] {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.information h3[b-9yl91h9u3f], .start-cooking h2[b-9yl91h9u3f] {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.details[b-9yl91h9u3f] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.button-group[b-9yl91h9u3f] {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 20px;
+}
+
+.ingredients[b-9yl91h9u3f], .nutrition[b-9yl91h9u3f], .dietary-info[b-9yl91h9u3f] {
+    flex: 1;
+    margin-right: 20px;
+    align-items: start
+}
+
+    .ingredients h3[b-9yl91h9u3f], .nutrition h3[b-9yl91h9u3f], .dietary-info h3[b-9yl91h9u3f] {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .ingredients ul[b-9yl91h9u3f] {
+        list-style-type: none;
+        padding: 0;
+    }
+
+        .ingredients ul li[b-9yl91h9u3f] {
+            margin-bottom: 10px;
+        }
+
+.start-cooking button[b-9yl91h9u3f] {
+    background-color: #c9e265;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    .start-cooking button:hover[b-9yl91h9u3f] {
+        background-color: #45a049;
+    }
+
+.custom-ol[b-9yl91h9u3f] {
+    list-style: none;
+    padding-left: 0;
+}
+
+    .custom-ol li[b-9yl91h9u3f] {
+        counter-increment: list-counter;
+        margin-bottom: 10px;
+    }
+
+        .custom-ol li[b-9yl91h9u3f]:before {
+            content: counter(list-counter);
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #c9e265;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 8px;
+        }
+/* _content/MealPlan/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-ccmifeklsb] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-ccmifeklsb] {
+  color: #0077cc;
+}
+
+.btn-primary[b-ccmifeklsb] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-ccmifeklsb], .nav-pills .show > .nav-link[b-ccmifeklsb] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-ccmifeklsb] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-ccmifeklsb] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-ccmifeklsb] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-ccmifeklsb] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-ccmifeklsb] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+
+.spacing .form-control[b-ccmifeklsb] {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.footer[b-ccmifeklsb] {
+    background-color: #f8f9fa; /* Example footer background color */
+    padding: 5px 0;
+    text-align: center;
+    margin-top: auto; /* Push the footer to the bottom */
+    position: relative; /* Ensure the footer stays at the bottom */
+    z-index: 1; /* Ensure the footer is above other content */
+}

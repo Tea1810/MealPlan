@@ -1,0 +1,57 @@
+﻿
+
+.texts {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 10rem 2rem;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+    .texts h1 {
+        font-size: 4rem;
+        color: black;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .texts p {
+        font-size: 1.5rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+.calculator-preview {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+    .calculator-preview h2 {
+        margin-bottom: 1.5rem;
+    }
+
+.calculator-image {
+    max-width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.features {
+    padding: 3rem 0;
+    background-color: #fff;
+}
+
+.feature-card {
+    padding: 2rem;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+

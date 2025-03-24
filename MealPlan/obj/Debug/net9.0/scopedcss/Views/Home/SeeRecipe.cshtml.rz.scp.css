@@ -1,0 +1,122 @@
+.btn-outline-secondary[b-9yl91h9u3f] {
+    background-color: transparent;
+    border: 2px solid #c9e265;
+    color: #c9e265;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .btn-outline-secondary:hover[b-9yl91h9u3f] {
+        border: #c9e265;
+        background-color: #c9e265;
+        color: white;
+    }
+
+    .btn-outline-secondary:enabled[b-9yl91h9u3f] {
+        border: #c9e265;
+        background-color: #c9e265;
+        color: white;
+    }
+
+.container[b-9yl91h9u3f] {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.meta[b-9yl91h9u3f] {
+    font-size: 1em;
+    background-color: #c9e265;
+    margin-top: 50px;
+    margin-bottom: 90px;
+    margin-right: 10px;
+    padding: 6px 8px;
+    border-radius: 5px;
+}
+
+.intro p[b-9yl91h9u3f] {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.information h3[b-9yl91h9u3f], .start-cooking h2[b-9yl91h9u3f] {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.details[b-9yl91h9u3f] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.button-group[b-9yl91h9u3f] {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 20px;
+}
+
+.ingredients[b-9yl91h9u3f], .nutrition[b-9yl91h9u3f], .dietary-info[b-9yl91h9u3f] {
+    flex: 1;
+    margin-right: 20px;
+    align-items: start
+}
+
+    .ingredients h3[b-9yl91h9u3f], .nutrition h3[b-9yl91h9u3f], .dietary-info h3[b-9yl91h9u3f] {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .ingredients ul[b-9yl91h9u3f] {
+        list-style-type: none;
+        padding: 0;
+    }
+
+        .ingredients ul li[b-9yl91h9u3f] {
+            margin-bottom: 10px;
+        }
+
+.start-cooking button[b-9yl91h9u3f] {
+    background-color: #c9e265;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    .start-cooking button:hover[b-9yl91h9u3f] {
+        background-color: #45a049;
+    }
+
+.custom-ol[b-9yl91h9u3f] {
+    list-style: none;
+    padding-left: 0;
+}
+
+    .custom-ol li[b-9yl91h9u3f] {
+        counter-increment: list-counter;
+        margin-bottom: 10px;
+    }
+
+        .custom-ol li[b-9yl91h9u3f]:before {
+            content: counter(list-counter);
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #c9e265;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 8px;
+        }

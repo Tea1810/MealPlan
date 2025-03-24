@@ -1,0 +1,122 @@
+﻿.btn-outline-secondary {
+    background-color: transparent;
+    border: 2px solid #c9e265;
+    color: #c9e265;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .btn-outline-secondary:hover {
+        border: #c9e265;
+        background-color: #c9e265;
+        color: white;
+    }
+
+    .btn-outline-secondary:enabled {
+        border: #c9e265;
+        background-color: #c9e265;
+        color: white;
+    }
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.meta {
+    font-size: 1em;
+    background-color: #c9e265;
+    margin-top: 50px;
+    margin-bottom: 90px;
+    margin-right: 10px;
+    padding: 6px 8px;
+    border-radius: 5px;
+}
+
+.intro p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.information h3, .start-cooking h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.button-group {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 20px;
+}
+
+.ingredients, .nutrition, .dietary-info {
+    flex: 1;
+    margin-right: 20px;
+    align-items: start
+}
+
+    .ingredients h3, .nutrition h3, .dietary-info h3 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .ingredients ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+        .ingredients ul li {
+            margin-bottom: 10px;
+        }
+
+.start-cooking button {
+    background-color: #c9e265;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    .start-cooking button:hover {
+        background-color: #45a049;
+    }
+
+.custom-ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+    .custom-ol li {
+        counter-increment: list-counter;
+        margin-bottom: 10px;
+    }
+
+        .custom-ol li:before {
+            content: counter(list-counter);
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #c9e265;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 8px;
+        }

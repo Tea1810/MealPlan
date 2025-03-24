@@ -1,0 +1,85 @@
+﻿@{
+	ViewData["Title"] = "Home";
+}
+
+<div class="texts texts-fluid">
+	<div class="container text-center">
+		<h1 class="display-4">Reach Your Fitness Goals with Precision</h1>
+		<p class="lead">Calculate your optimal macronutrient intake and track your progress.</p>
+		<a class="greenButton" asp-controller="Home" asp-action="Recipe" role="button">Get Started</a>
+	</div>
+</div>
+
+<section id="calculator" class="calculator-preview">
+	<div class="container">
+		<h2 class="text-center mb-4">Calculate Your Macros</h2>
+		<p class="text-center">See a preview of how our macro calculator can help you optimize your diet.</p>
+		<a class="greenButton" asp-controller="Home" asp-action="Journal" role="button">Open Calculator</a>
+	</div>
+</section>
+
+<section id="features" class="features bg-light">
+	<div class="container">
+		<h2 class="text-center mb-4">Key Features</h2>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="feature-card">
+					<i class="fas fa-calculator feature-icon"></i>
+					<h4>Accurate Calculations</h4>
+					<p>Get precise macro breakdowns based on your individual needs and goals.</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="feature-card">
+					<i class="fas fa-chart-line feature-icon"></i>
+					<h4>Progress Tracking</h4>
+					<p>Monitor your macro intake over time and visualize your progress.</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="feature-card">
+					<i class="fas fa-utensils feature-icon"></i>
+					<h4>Food Database</h4>
+					<p>Access a comprehensive database of foods to easily track your meals.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="about" class="py-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>About MacroTrack</h2>
+				<p>MacroTrack is designed to empower you to take control of your nutrition and achieve your fitness goals. Whether you're looking to lose weight, build muscle, or simply improve your overall health, our app provides the tools and insights you need to succeed.</p>
+				<p>We believe that understanding your macronutrient needs is the key to a balanced and effective diet.  MacroTrack simplifies the process of calculating and tracking your macros, making it easier than ever to reach your full potential.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="contact" class="py-5 bg-light">
+	<div class="container">
+		<h2 class="text-center mb-4">Contact Us</h2>
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<form>
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" class="form-control" id="name" placeholder="Your Name">
+					</div>
+					<div class="form-group">
+						<label for="email">Email address</label>
+						<input type="email" class="form-control" id="email" placeholder="Your Email">
+					</div>
+					<div class="form-group">
+						<label for="message">Message</label>
+						<textarea class="form-control" id="message" rows="5" placeholder="Your Message"></textarea>
+					</div>
+					<button type="submit" class="btn btn-primary" style="background-color: #c9e265; border: #c9e265">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>

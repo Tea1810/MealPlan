@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "Recipe Page";
+}
+
+<div class="row justify-content-center">
+    <div class="col-10 d-flex flex-column align-items-center" style="background-color: #faffe4; min-height: 100vh; padding: 20px;">
+      
+        <div class="img-box mb-4">
+            <img src="~/Pui.jpg" class="img-fluid" style="max-width: 100%; height: auto;">
+        </div>
+
+        <div class="recipe-content text-center">
+                <h2>Curry chicken with white rice</h2>
+                <span class="meta">15 MINS</span>
+                <span class="meta">EASY</span>
+
+            <section class="intro">
+                <p>Chicken tikka masala is a dish consisting of roasted marinated chopped chicken (chicken tikka) in a spiced sauce (masala). The sauce is usually creamy and orange-coloured. The origins of the dish are debated, with many believing it was created by South Asian cooks in Britain.
+            </section>
+
+            <section class="information">
+                <h3>Information</h3>
+                <div class="details">
+                    <div class="button-group">
+                        <button type="button" class="btn btn-outline-secondary active" data-target="ingredients">INGREDIENTS</button>
+                        <button type="button" class="btn btn-outline-secondary" data-target="nutrition">NUTRITION</button>
+                    </div>
+                    <div class="ingredients custom-list" id="ingredients" style="display: block;">
+                        <ul>
+                            <li>2 cups berries (frozen or fresh)</li>
+                            <li>3 - 4 tsp chia seeds</li>
+                            <li>1 splash of lemon juice</li>
+                        </ul>
+                    </div>
+
+                    <div class="ingredients custom-list" id="nutrition" style="display: none;">
+                        <ul>
+                            <li>Total Fat: 11g</li>
+                            <li>Cholesterol: 74mg</li>
+                            <li>Sodium: 73mg</li>
+                            <li>Carbohydrates: 7.5g</li>
+                            <li>Protein: 28g</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <p>............................................................................................</p>
+
+            <section class="information">
+                <h3>Preparation steps</h3>
+                <ol class="custom-ol">
+                    <li>Prepare the following, adding each to the same large bowl as you complete it: Pick the leaves from 15 fresh thyme sprigs (about 1 tablespoon). Coarsely chop 1 small red onion and separate the pieces. Thinly slice 3 medium scallions (about 1/3 cup). Trim and thinly slice 1 small habanero or scotch bonnet pepper.</li>
+                    <li>Add 2 tablespoons Maggi all-purpose seasoning, 2 tablespoons of the Jamaican curry powder, 1 teaspoon garlic powder, 1 teaspoon onion powder, 1/2 teaspoon ground white pepper, and 1/2 teaspoon black pepper. Stir to combine.</li>
+                    <li>Cut 4 pounds bone-in chicken pieces into rough 3-inch pieces (halve thighs or drumsticks across the bone). Add to the marinade and toss to combine, massaging the seasonings into the chicken with your hands (wear gloves if you can). Cover and let marinate in the refrigerator for at least 1 hour or up to overnight.</li>
+                    <li>Mince 2 garlic cloves. Heat 2 tablespoons vegetable oil in a large pot or Dutch oven over medium heat until shimmering. Add the garlic and remaining 1 teaspoon Jamaican curry powder and cook, stirring constantly, until fragrant, about 15 seconds. Using tongs, transfer the chicken into the pan and reserve the marinade left in the bowl. Cover and cook for 5 minutes (reduce the heat as needed if the chicken starts to burn). Uncover and stir the chicken, making sure it is not stuck to the bottom.</li>
+                    <li>Add 2 cups water to the reserved marinade and stir to combine. Pour the liquid into the pot. Cover and boil (not simmer), stirring occasionally, until the chicken is cooked through and tender, 30 to 35 minutes. (The liquid level should always be about halfway up the chicken, add more water as needed.) Meanwhile, peel and cut 2 medium white potatoes into large dice. Peel and cut 1 medium carrot into medium dice.</li>
+                    <li>Add the potatoes, carrots, 1 chicken bouillon cube, and 6 allspice berries to the pot. Stir until the bouillon is dissolved. Taste the sauce and season with salt as needed. Cover and boil until the potatoes are fork tender and the sauce is thickened to the consistency of thick gravy, 8 to 10 minutes. Serve with roti or steamed rice.</li>
+                </ol>
+            </section>
+            <section class="start-cooking">
+                <h2>START COOKING!</h2>
+                <button>Start Cooking</button>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.querySelectorAll('.btn-outline-secondary').forEach(button => {
+        button.addEventListener('click', function () {
+            document.querySelectorAll('.btn-outline-secondary').forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            document.querySelectorAll('.ingredients.custom-list').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            const target = this.getAttribute('data-target');
+            document.getElementById(target).style.display = 'block';
+        });
+    });
+
+     document.querySelector('.start-cooking button').addEventListener('click', function () {
+            let timeLeft = 15 * 60; 
+            let timerInterval;
+
+            function updateTimerDisplay() {
+                const minutes = Math.floor(timeLeft / 60);
+                let seconds = timeLeft % 60;
+                seconds = seconds < 10 ? '0' + seconds : seconds; 
+
+                document.querySelector('.start-cooking').innerHTML = `<h2>Time Left: ${minutes}:${seconds}</h2>`;
+            }
+
+            function startTimer() {
+                timerInterval = setInterval(function () {
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        document.querySelector('.start-cooking').innerHTML = '<h2>Time\'s Up!</h2>';
+                    } else {
+                        timeLeft--;
+                        updateTimerDisplay();
+                    }
+                }, 1000); 
+            }
+
+            updateTimerDisplay();
+            startTimer(); 
+        });
+</script>
