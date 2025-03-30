@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Recipe Page";
+
+    var recipes = new List<RecipeModel>
+    {
+        new RecipeModel { RecipeId = 1, RecipeName = "Salsa" },
+        new RecipeModel { RecipeId = 3, RecipeName = "Mashed Potatoes" },
+        new RecipeModel { RecipeId = 3, RecipeName = "Garlic" }
+    };
+}
+
+<section class="about_section layout_padding">
+    <div class="container  ">
+        <div class="row">
+            <div class="col-md-6 ">
+                <div class="img-box">
+                    <img src="~/Recipe.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="detail-box">
+                    <div class="heading_container">
+                        <h2>
+                            My <span style="color: #c9e265;">Recipies</span>
+                        </h2>
+                    </div>
+                    <p>
+                        You must test your recipes to make sure they work, the amounts and serving sizes are correct, and that they taste as great as you intend. If you are “testing as you go” make sure to take perfect notes. For beginners, and most of us pros, repeat testing and revision are needed. It helps to have other people follow your recipes to see if they actually make sense.
+                    </p>
+                    <div class="row">
+                        <a asp-controller="RecipeModels" asp-action="Create" class="btn btn-dark col-md-4">Create a Recipe</a>
+                        <div class="col-md-7">
+                            <div class="dropdown">
+                                <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+                                    See Recipes
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    @foreach (var recipe in recipes)
+                                    {
+                                        <a class="dropdown-item" asp-controller="Home" asp-action="SeeRecipe">@recipe.RecipeName</a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+         document.getElementById('see-recipe-dropdown').addEventListener('change', function() {
+        const selectedOption = this.options[this.selectedIndex]; // Get the selected option
+        const url = selectedOption.getAttribute('data-url'); // Get the URL from the data attribute
+
+        if (url) {
+            window.location.href = url; // Redirect to the specified URL
+        }
+    });
+</script>

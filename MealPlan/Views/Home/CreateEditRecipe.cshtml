@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Create a recipe";
 }
-@model MealPlan.Models.RecipeViewModel
+@model MealPlan.Models.RecipeModel
 <div class="text-center">
     <h1 class="display-4" style="margin-bottom: 40px">Create Recipe</h1>
 </div>
@@ -9,17 +9,17 @@
 <form>
 
     <label>Recipe Name</label>
-    <input class="form-control mb-5" type="text" asp-for="Name"/>
+    <input class="form-control mb-5" type="text" asp-for="RecipeName"/>
 
     <label>Description</label>
-    <input class="form-control mb-5" type="text" asp-for="Description"/>
+    <input class="form-control mb-5" type="text" asp-for="RecipeDescription"/>
     
     <label>Duration</label>
-    <input class="form-control mb-5" type="time" asp-for="Duration"/>
+    <input class="form-control mb-5" type="time" asp-for="RecipeDuration"/>
 
     <div class="mb-5">
         <label>Dificulty</label>
-        <select class="form-control" asp-for="Difficulty">
+        <select class="form-control" asp-for="RecipeDifficulty">
             <option value="">-- Select the dificulty --</option>
             <option value="Easy">Easy</option>
             <option value="Medium">Medium</option>
@@ -71,9 +71,13 @@
 
 
     <label>Preparation mode</label>
-    <textarea class="form-control mb-5" type="text" asp-for="Preparation"></textarea>
-    
-    <a class="btn btn-dark mt-4" asp-controller="Home" asp-action="CreateIngredients">Save recipe</a>
+    <textarea class="form-control mb-5" type="text" asp-for="RecipePreparationMode"></textarea>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-dark mt-4" />
+    </div>
+
+
 </form>
 
 

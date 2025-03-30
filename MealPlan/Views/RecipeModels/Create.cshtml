@@ -1,0 +1,150 @@
+﻿@{
+    ViewData["Title"] = "Create a recipe";
+}
+@model MealPlan.Models.RecipeModel
+<div class="text-center">
+    <h1 class="display-4" style="margin-bottom: 40px">Create Recipe</h1>
+</div>
+
+<form asp-action="Create">
+
+    <div class="form-group">
+        <label asp-for="RecipeName">Recipe Name</label>
+        <input class="form-control mb-5" type="text" asp-for="RecipeName" />
+        <span asp-validation-for="RecipeName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RecipeDescription">Description</label>
+        <input class="form-control mb-5" type="text" asp-for="RecipeDescription" />
+        <span asp-validation-for="RecipeDescription" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RecipeDuration">Duration</label>
+        <input class="form-control mb-5" type="time" asp-for="RecipeDuration" />
+        <span asp-validation-for="RecipeDuration" class="text-danger"></span>
+    </div>
+
+    <div class="mb-5 form-group">
+        <label asp-for="RecipeDifficulty">Dificulty</label>
+        <select class="form-control" asp-for="RecipeDifficulty">
+            <option value="">-- Select the dificulty --</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-4">
+            <label>Select Ingredients</label>
+            <select name="selectedIngredients" id="ingredients" class="form-control">
+                <option value="">-- Select an ingredient --</option>
+                 @foreach (var ingredient in ViewBag.Ingredients)
+                    {
+                        <option value="@ingredient.Text">@ingredient.Text</option>
+                    }
+                <option value="Other">Other ingredient</option>
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <label>Quantity</label>
+            <input id="quantity" class="form-control" type="text" />
+        </div>
+
+        <div class="col-md-2">
+            <label></label>
+            <select id="mesurements" class="form-control">
+                <option value="">-- Select mesurement --</option>
+                <option value="cups">cups</option>
+                <option value="grams">grams</option>
+                <option value="tablespoon">tablespoon</option>
+            </select>
+        </div>
+
+        <div class="col-md-2 d-flex align-items-end">
+            <button type="button" class="btn btn-dark w-100" onclick="addIngredient()">Add Ingredient</button>
+        </div>
+    </div>
+
+    <div id="other-ingredient-container" class="md-5" style="display: none;">
+        <label>Specify Other Ingredient</label>
+        <input id="other-ingredient-input" class="form-control" type="text" placeholder="Enter custom ingredient" />
+    </div>
+
+    <div class="mb-5" id="showIngredients">
+        <ul id="selected-ingredients-list" class="custom-list"></ul>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RecipePreparationMode">Preparation mode</label>
+        <textarea class="form-control mb-5" type="text" asp-for="RecipePreparationMode"></textarea>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-dark mt-4" />
+    </div>
+</form>
+
+
+<script>
+    // Show/hide the "Other ingredient" text input
+    document.getElementById('ingredients').addEventListener('change', function() {
+        const otherIngredientContainer = document.getElementById('other-ingredient-container');
+        if (this.value === 'Other') {
+            otherIngredientContainer.style.display = 'block';
+        } else {
+            otherIngredientContainer.style.display = 'none';
+        }
+    });
+
+    // Add selected ingredient to the list
+    function addIngredient() {
+        const ingredientsDropdown = document.getElementById('ingredients');
+        const otherIngredientInput = document.getElementById('other-ingredient-input');
+        const selectedIngredientsList = document.getElementById('selected-ingredients-list');
+        const selectedQuantity = document.getElementById('quantity').value;
+        const selectedMeasurement = document.getElementById('mesurements').value;
+        let ingredient;
+
+        if(!selectedQuantity)
+        {
+                alert('Please enter quantity.');
+                return;
+        }
+
+        if(!selectedMeasurement)
+        {
+                alert('Please enter a mesurement unit.');
+                return;
+        }
+
+        if (ingredientsDropdown.value === 'Other') {
+            ingredient = otherIngredientInput.value.trim(); // Get custom ingredient
+            if (!ingredient) {
+                alert('Please enter a custom ingredient.');
+                return;
+            }
+        } else {
+            ingredient = ingredientsDropdown.value; // Get predefined ingredient
+            if (!ingredient) {
+                alert('Please select an ingredient.');
+                return;
+            }
+        }
+
+        // Add the ingredient to the list
+        const listItem = document.createElement('li');
+        listItem.textContent = `${ingredient} - ${selectedQuantity} ${selectedMeasurement}`;
+        selectedIngredientsList.appendChild(listItem);
+
+        // Clear inputs
+        ingredientsDropdown.value = '';
+        otherIngredientInput.value = '';
+        document.getElementById('quantity').value = '';
+        document.getElementById('measurements').value = '';
+        document.getElementById('other-ingredient-container').style.display = 'none';
+    }
+</script>

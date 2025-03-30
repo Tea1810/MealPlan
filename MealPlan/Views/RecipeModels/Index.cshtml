@@ -1,11 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Recipe Page";
 
-    var recipes = new List<RecipeViewModel>
+    var recipes = new List<RecipeModel>
     {
-        new RecipeViewModel { Id = 1, Name = "Salsa" },
-        new RecipeViewModel { Id = 3, Name = "Mashed Potatoes" },
-        new RecipeViewModel { Id = 3, Name = "Garlic" }
+        new RecipeModel { RecipeId = 1, RecipeName = "Salsa" },
+        new RecipeModel { RecipeId = 3, RecipeName = "Mashed Potatoes" },
+        new RecipeModel { RecipeId = 3, RecipeName = "Garlic" }
     };
 }
 
@@ -28,19 +28,20 @@
                         You must test your recipes to make sure they work, the amounts and serving sizes are correct, and that they taste as great as you intend. If you are “testing as you go” make sure to take perfect notes. For beginners, and most of us pros, repeat testing and revision are needed. It helps to have other people follow your recipes to see if they actually make sense.
                     </p>
                     <div class="row">
-                    <a asp-controller="Home" asp-action="CreateEditRecipe" class="btn btn-dark col-md-4">Create a Recipe</a>
+                        <a asp-controller="RecipeModels" asp-action="Create" class="btn btn-dark col-md-4">Create a Recipe</a>
                         <div class="col-md-7">
                             <div class="dropdown">
                                 <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-                                    See Recipes                   
+                                    See Recipes
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    @foreach (var recipe in recipes)
+                                    @foreach (var recipe in Model)
                                     {
-                                        <a class="dropdown-item" asp-controller="Home" asp-action="SeeRecipe">@recipe.Name</a>
+                                        <a class="dropdown-item" asp-controller="Home" asp-action="SeeRecipe">@recipe.RecipeName</a>
                                     }
-                                    </div> 
-                                    </div> </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -48,7 +49,7 @@
     </div>
 </section>
 
- <script>
+<script>
          document.getElementById('see-recipe-dropdown').addEventListener('change', function() {
         const selectedOption = this.options[this.selectedIndex]; // Get the selected option
         const url = selectedOption.getAttribute('data-url'); // Get the URL from the data attribute
@@ -57,4 +58,4 @@
             window.location.href = url; // Redirect to the specified URL
         }
     });
- </script>
+</script>
